@@ -45,3 +45,6 @@ example
 
 # local assistant config
 .claude/
+
+# vercel
+.vercel
