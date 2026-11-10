@@ -20,7 +20,13 @@ different scores. The final page shows the winning team and the points it earned
 ```bash
 npm install
 npx expo start          # add --tunnel if your phone can't connect
+npm run tunnel          # tunnel mode on port 8082 that restarts itself if it crashes
 ```
+
+If the OpenRouter account runs out of credit (HTTP 402), the server switches to a free model
+automatically (slower). If the AI fails, the game offers offline questions.
+
+Before finishing a change, run `npx tsc --noEmit` and `npx expo lint`.
 
 The key is only used by the server route `src/app/api/questions+api.ts`. In development that runs
 inside the Expo dev server on your computer. For a published app, deploy the API route
@@ -52,3 +58,8 @@ Scan the QR code with the Expo Go app (Android) or the Camera app (iOS).
 - `src/data/teams.ts` – team names, defaults and turn order
 - `src/data/questions.ts` – `Question` / `Difficulty` types and offline fallback questions
 - `src/constants/theme.ts` – colors and radii
+
+## Handover
+
+[projectDescription.md](projectDescription.md) has the full project history, design decisions, fixes,
+steps for moving to new GitHub / Vercel / Claude accounts, and the complete source code.
